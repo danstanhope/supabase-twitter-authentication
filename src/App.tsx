@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import LoginPage from './pages/Login/LoginPage';
+import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
+import Dashboard from './pages/Dashboard/Dashboard';
+import { authObserver } from './actions/Auth';
+import { connect } from 'react-redux';
 
-function App() {
+const App = (props: any) => {
+  useEffect(() => {        
+    return props.authObserver();
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <Router>
+        <Routes>
+          <Route
+            path="/dashboard"
+            element={<PrivateRoute component={Dashboard}  />}
+          />
+          <Route path='/login' element={<LoginPage />} />
+        </Routes>
+      </Router>
+    </React.Fragment >
   );
 }
 
-export default App;
+const mapDispatchToProps = (dispatch:any) => {
+  return {
+    authObserver: () => dispatch(authObserver())
+  };
+}
+
+export default connect(null, mapDispatchToProps)(App);
+
+
