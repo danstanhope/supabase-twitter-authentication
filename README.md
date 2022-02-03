@@ -1,4 +1,4 @@
-#Set up Supabase Twitter authentication with React Private Routes
+# Set up Supabase Twitter authentication with React Private Routes
 
 Twitter Authentication using Supabase + React + Redux + Typescript
 
