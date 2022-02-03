@@ -1,4 +1,4 @@
-### Upload to S3 using pre-signed urls and React Uploady
+#Set up Supabase Twitter authentication with React Private Routes
 
 Twitter Authentication using Supabase + React + Redux + Typescript
 
