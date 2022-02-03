@@ -1,3 +1,10 @@
+### Upload to S3 using pre-signed urls and React Uploady
+
+Twitter Authentication using Supabase + React + Redux + Typescript
+
+#### For more info. check out:
+[dev.to post](https://dev.to/danstanhope/twitter-authentication-using-supabase-react-redux-typescript-4c87)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
